@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>show</h1>
+
+<div>
+    <img src="{{product.image}}" alt="product">
+    <h2>{{product.name}}</h2>
+    <p>{{product.description}}</p>
+    <a href="{{path('product_edit', {'id': product.id})}}">update</a>
+    <a href="{{path('product_delete', {'id': product.id})}}">delete</a>
+</div>
+
+{% endblock %}
