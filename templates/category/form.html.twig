@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>form</h1>
+
+{{ form_start(categoryForm) }}
+    {{ form_row(categoryForm.name, {'attr': { 'placeholder': 'Name' }}) }}
+    {{ form_row(categoryForm.image, {'attr': { 'placeholder': 'Image URL' }}) }}
+
+    <button type="submit">Submit</button>
+{{ form_end(categoryForm) }}
+
+{% endblock %}

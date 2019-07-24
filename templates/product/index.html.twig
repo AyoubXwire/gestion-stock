@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>index</h1>
+
+{% for product in products %}
+
+<div>
+    <img src="{{product.image}}" alt="product">
+    <h2>{{product.name}}</h2>
+    <p>{{product.description}}</p>
+    <a href="{{path('product_show', {'id': product.id})}}">details</a>
+</div>
+
+{% endfor %}
+
+{% endblock %}
