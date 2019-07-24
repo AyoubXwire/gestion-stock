@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% use "bootstrap_4_layout.html.twig" %}
 
 {% block body %}
 
@@ -8,7 +9,13 @@
     {{ form_row(categoryForm.name, {'attr': { 'placeholder': 'Name' }}) }}
     {{ form_row(categoryForm.image, {'attr': { 'placeholder': 'Image URL' }}) }}
 
-    <button type="submit">Submit</button>
+    <button class="btn btn-success" type="submit">
+        {% if editMode %}
+            update
+        {% else %}
+            create
+        {% endif %}
+    </button>
 {{ form_end(categoryForm) }}
 
 {% endblock %}

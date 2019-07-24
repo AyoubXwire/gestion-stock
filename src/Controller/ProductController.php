@@ -14,13 +14,6 @@ class ProductController extends AbstractController
 {
     /**
      * @Route("/", name="home")
-     */
-    public function home()
-    {
-        return $this->render('blog/home.html.twig');
-    }
-
-    /**
      * @Route("/products", name="product_index")
      */
     public function index(ProductRepository $repo)
@@ -56,7 +49,8 @@ class ProductController extends AbstractController
         }
 
         return $this->render('product/form.html.twig', [
-            'productForm' => $productForm->createView()
+            'productForm' => $productForm->createView(),
+            'editMode' => $product->getId() !== null
         ]);
     }
 

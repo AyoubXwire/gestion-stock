@@ -2,13 +2,12 @@
 
 {% block body %}
 
-<h1>show</h1>
+<h1 class="display-4">{{category.name}}</h1>
 
-<div>
-    <img src="{{category.image}}" alt="category">
-    <h2>{{category.name}}</h2>
-    <a href="{{path('category_edit', {'id': category.id})}}">update</a>
-    <a href="{{path('category_delete', {'id': category.id})}}">delete</a>
+<img src="{{category.image}}" alt="category">
+<div class="my-4">
+    <a class="btn btn-primary" href="{{path('category_edit', {'id': category.id})}}">update</a>
+    <a class="btn btn-danger" href="{{path('category_delete', {'id': category.id})}}">delete</a>
 </div>
 
 <h2>List of products</h2>

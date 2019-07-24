@@ -2,17 +2,23 @@
 
 {% block body %}
 
-<h1>index</h1>
-
-{% for product in products %}
-
-<div>
-    <img src="{{product.image}}" alt="product">
-    <h2>{{product.name}} <small>in {{product.category.name}}</small></h2>
-    <p>{{product.description}}</p>
-    <a href="{{path('product_show', {'id': product.id})}}">details</a>
+<div class="text-center">
+    <h1 class="display-4">Products</h1>
+    <a href="{{path('product_new')}}">Create new product</a>
 </div>
 
-{% endfor %}
+<div class="row">
+    {% for product in products %}
+        <div class="col-lg-6 col-md-12">
+            <div class="card border-dark m-4 shadow">
+                <h4 class="card-title text-center mt-1">{{product.name}} <small>in {{product.category.name}}</small></h4>
+                <img src="{{product.image}}" class="card-img-top" alt="category">
+                <div class="card-body">
+                    <a href="{{path('product_show', {'id': product.id})}}" class="btn btn-block btn-success border-dark">Details</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

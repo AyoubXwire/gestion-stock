@@ -2,14 +2,16 @@
 
 {% block body %}
 
-<h1>show</h1>
+<h1 class="display-4">{{product.name}}</h1>
 
 <div>
     <img src="{{product.image}}" alt="product">
-    <h2>{{product.name}} <small>in {{product.category.name}}</small></h2>
+    <h2>{{product.name}} <small>in <a href="{{path('category_show', {'id': product.category.id})}}">{{product.category.name}}</a></small></h2>
     <p>{{product.description}}</p>
-    <a href="{{path('product_edit', {'id': product.id})}}">update</a>
-    <a href="{{path('product_delete', {'id': product.id})}}">delete</a>
+    <div class="my-4">
+        <a class="btn btn-primary" href="{{path('product_edit', {'id': product.id})}}">update</a>
+        <a class="btn btn-danger" href="{{path('product_delete', {'id': product.id})}}">delete</a>
+    </div>
 </div>
 
 {% endblock %}
