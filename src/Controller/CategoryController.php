@@ -48,7 +48,8 @@ class CategoryController extends AbstractController
         }
 
         return $this->render('category/form.html.twig', [
-            'categoryForm' => $categoryForm->createView()
+            'categoryForm' => $categoryForm->createView(),
+            'editMode' => $category->getId() !== null
         ]);
     }
 

@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
+{% use "bootstrap_4_layout.html.twig" %}
 
 {% block body %}
-
-<h1>form</h1>
 
 {{ form_start(productForm) }}
     {{ form_row(productForm.name, {'attr': { 'placeholder': 'Name' }}) }}
@@ -10,7 +9,13 @@
     {{ form_row(productForm.description, {'attr': { 'placeholder': 'Description' }}) }}
     {{ form_row(productForm.image, {'attr': { 'placeholder': 'Image URL' }}) }}
 
-    <button type="submit">Submit</button>
+    <button class="btn btn-success" type="submit">
+        {% if editMode %}
+            update
+        {% else %}
+            create
+        {% endif %}
+    </button>
 {{ form_end(productForm) }}
 
 {% endblock %}
