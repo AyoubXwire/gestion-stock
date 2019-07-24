@@ -6,6 +6,7 @@
 
 {{ form_start(productForm) }}
     {{ form_row(productForm.name, {'attr': { 'placeholder': 'Name' }}) }}
+    {{ form_row(productForm.category) }}
     {{ form_row(productForm.description, {'attr': { 'placeholder': 'Description' }}) }}
     {{ form_row(productForm.image, {'attr': { 'placeholder': 'Image URL' }}) }}
 
